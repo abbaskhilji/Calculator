@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="script.js"></script> -->
+</head>
+
+<body>
+    <h1 class="center">Calcultor using HTML, CSS ,JavaScript</h1>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="btn" onclick="clearDisplay()">C</button>
+            <button class="btn" onclick="deleteLast()">←</button>
+            <button class="btn" onclick="appendToDisplay('/')">/</button>
+            <button class="btn" onclick="appendToDisplay('*')">*</button>
+            <button class="btn" onclick="appendToDisplay('7')">7</button>
+            <button class="btn" onclick="appendToDisplay('8')">8</button>
+            <button class="btn" onclick="appendToDisplay('9')">9</button>
+            <button class="btn" onclick="appendToDisplay('-')">-</button>
+            <button class="btn" onclick="appendToDisplay('4')">4</button>
+            <button class="btn" onclick="appendToDisplay('5')">5</button>
+            <button class="btn" onclick="appendToDisplay('6')">6</button>
+            <button class="btn" onclick="appendToDisplay('+')">+</button>
+            <button class="btn" onclick="appendToDisplay('1')">1</button>
+            <button class="btn" onclick="appendToDisplay('2')">2</button>
+            <button class="btn" onclick="appendToDisplay('3')">3</button>
+            <button class="btn" onclick="calculateResult()">=</button>
+            <button class="btn" onclick="appendToDisplay('0')">0</button>
+            <button class="btn" onclick="appendToDisplay('.')">.</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+    <!-- <div class="container flex items-center flex-col margin bg-color mx-width">
+        <div class="row">
+            <input  class="input" type="text">
+        </div>
+        <div class="row">
+            <button  class="button">7</buttton>
+                <button class="button">8</buttton>
+                    <button class="button">9</buttton>
+                        <button class="button">*</buttton>
+        </div>
+        <div class="row">
+            <button class="button">4</buttton>
+                <button class="button">5</buttton>
+                    <button class="button">6</buttton>
+                        <button class="button">/</buttton>
+        </div>
+        <div class="row">
+            <button  class="button">1</buttton>
+                <button   class="button">2</buttton>
+                    <button  class="button">3</buttton>
+                        <button class="button">+</buttton>
+        </div>
+        <div class="row">
+            <button class="button">0</buttton>
+                <button class="button">.</buttton>
+                    <button class="button">=</buttton>
+                        <button class="button">-</buttton>
+        </div>
+
+    </div> -->
+    <!-- <script>
+        var string = '';
+        var buttons = document.querySelectorAll('.button');
+        Array.from(buttons).forEach((button) => {
+            button.addEventListener('click', (e) => {
+                if (e.target.innerHTML == '=') {
+                    string = eval(string);
+                    document.querySelector('input').value = string;
+
+
+                }
+                else {
+                    console.log(e.target)
+                    string = string + e.target.innerHTML;
+                    document.querySelector('input').value = string;
+                }
+
+            })
+
+        })
+     </script> -->
+     <script>
+        // script.js
+
+function clearDisplay() {
+    document.getElementById('display').innerText = '0';
+}
+
+function deleteLast() {
+    const display = document.getElementById('display');
+    display.innerText = display.innerText.slice(0, -1) || '0';
+}
+
+function appendToDisplay(value) {
+    const display = document.getElementById('display');
+    if (display.innerText === '0') {
+        display.innerText = value;
+    } else {
+        display.innerText += value;
+    }
+}
+
+function calculateResult() {
+    const display = document.getElementById('display');
+    try {
+        display.innerText = eval(display.innerText) || '0';
+    } catch {
+        display.innerText = 'Error';
+    }
+}
+
+     </script>
+
+</body>
+
+</html>
